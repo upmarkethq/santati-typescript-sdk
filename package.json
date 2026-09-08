@@ -1,0 +1,30 @@
+{
+  "name": "santati-typescript-sdk",
+  "private": true,
+  "packageManager": "pnpm@10.33.2",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:coverage": "pnpm -r test:coverage",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "publint": "pnpm -r publint",
+    "attw": "pnpm -r attw",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm publint && pnpm attw",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@biomejs/biome": "^2.0.0",
+    "@changesets/cli": "^2.29.0",
+    "publint": "^0.3.0",
+    "typescript": "^5.9.3"
+  }
+}
